@@ -695,6 +695,8 @@ def _process_class( cls, add_init=True, add_str=True, add_repr=True,
 
   assert not 'get_field_type' in cls.__dict__
 
+  cls.__len__ = lambda self: self.nbits
+
   def get_field_type( cls, name ):
     if name in cls.__bitstruct_fields__:
       return cls.__bitstruct_fields__[ name ]
