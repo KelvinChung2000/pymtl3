@@ -279,7 +279,7 @@ class VerilogVerilatorImportConfigs( BasePassConfigs ):
     loop_unroll = "--unroll-count 1000000"
     stmt_unroll = "--unroll-stmts 1000000"
     thread      = "--threads 1"
-    if s.vl_trace_format == "vcd":
+    if (s.vl_trace_format == "vcd") or (s.vl_trace_format == "Vcd"):
       trace       = "--trace" if s.vl_trace else ""
     else:
       trace       = "--trace-fst" if s.vl_trace else ""
